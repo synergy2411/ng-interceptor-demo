@@ -1,0 +1,11 @@
+<div class="container">
+    <ul class="nav navbar-nav navbar-default">
+      <li><a [routerLink]="['home']">Home</a></li>
+        <li *ngIf="!authService.isAuthenticated()"><a [routerLink]="['login']">Login</a></li>
+        <li *ngIf="!authService.isAuthenticated()"><a [routerLink]="['register']">Register</a></li>
+        <li *ngIf="authService.isAuthenticated()"><a (click)="logout()">Logout</a></li>
+        <li *ngIf="authService.isAuthenticated()"><a [routerLink]="['showusers']">Show All Users</a></li>
+        <li *ngIf="authService.isAuthenticated()"><a [routerLink]="['adduser']">Add New Users</a></li>
+    </ul>
+  </div>
+  
